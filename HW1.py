@@ -56,13 +56,15 @@ def homework_one(question):
 
     ## B: Makes a plot of the policy (with time and capacity on the axes)
     if question == "B":
+        #optimal_policy = list(reversed(optimal_policy))
         # 3. Plot the heatmap
-        plt.axes().set_aspect('equal')
-        plt.imshow(optimal_policy, alpha=0.8, cmap='YlOrBr_r')
-        
+        #plt.axes().set_aspect('equal')
+        plt.imshow(optimal_policy[1:100], alpha=0.8, cmap='YlOrBr_r', aspect='auto')
+        plt.axis([0,600,0,100])
+        plt.xlabel("Time")
+        plt.ylabel("Capacity")
         plt.title( "HeatMap of the Optimal Policy" )
         plt.colorbar()
-        
         plt.legend()
         plt.show()
 
@@ -112,7 +114,7 @@ def homework_one(question):
         plt.legend()
         plt.show()
 
-homework_one("C")
+homework_one("B")
 
 
 
